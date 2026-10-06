@@ -1,0 +1,153 @@
+{
+  "kind": "agency",
+  "ui": {
+    "skip": "Saltar al contenido",
+    "menu": "Menú",
+    "navigation": "Navegación principal",
+    "demo": "Concepto de demostración · Marca y proyectos ficticios",
+    "name": "Tu nombre",
+    "email": "Correo electrónico",
+    "message": "Tu marca, el reto y la dirección que imaginas",
+    "submit": "Revisar mensaje",
+    "formNote": "Formulario de demostración. No envía ni guarda datos.",
+    "valid": "Mensaje validado. Esta demo no ha enviado ningún mensaje.",
+    "error": "Revisa los campos indicados.",
+    "loading": "Revisando…",
+    "required": "Completa este campo.",
+    "emailError": "Escribe un correo válido.",
+    "minimum": "Escribe al menos 10 caracteres.",
+    "noJs": "El formulario de prueba necesita JavaScript. No realiza envíos.",
+    "footer": "Una base Lumux Esencial · No exclusiva · v2.0",
+    "pause": "Pausar movimiento",
+    "resume": "Reanudar movimiento",
+    "sceneFallback": "Vista estática del concepto.",
+    "sceneLabel": "Escena interactiva de demostración",
+    "explore": "Explorar",
+    "close": "Cerrar",
+    "copyright": "© 2026 · Demostración"
+  },
+  "version": "2.0.0",
+  "contact": {
+    "title": "¿Qué vamos a mover?",
+    "description": "Cuéntanos qué estás imaginando. Haremos espacio para darle forma.",
+    "email": {
+      "label": "hola@example.com",
+      "href": "mailto:hola@example.com"
+    }
+  },
+  "seo": {
+    "title": "Órbita · Ideas fuera de lo esperado | Demo",
+    "description": "Concepto de agencia de diseño y dirección de arte con experiencia 3D. Base independiente Lumux Esencial."
+  },
+  "brand": {
+    "name": "órbita",
+    "descriptor": "Estudio independiente de diseño"
+  },
+  "nav": [
+    {
+      "label": "Proyectos",
+      "href": "#trabajo"
+    },
+    {
+      "label": "Laboratorio",
+      "href": "#laboratorio"
+    },
+    {
+      "label": "Tu brief ↗",
+      "href": "#contacto"
+    }
+  ],
+  "hero": {
+    "lines": [
+      "Ideas con",
+      "gravedad propia."
+    ],
+    "description": "Marcas con carácter. Experiencias con intención. Ideas que encuentran su propia órbita.",
+    "image": "/images/sculpture.svg",
+    "imageAlt": "Escultura orbital de respaldo para una escena 3D de marca.",
+    "caption": "Estrategia × Diseño × Movimiento",
+    "cta": {
+      "label": "Ver lo que hacemos",
+      "href": "#trabajo"
+    }
+  },
+  "projects": {
+    "title": "Ideas en el mundo.",
+    "description": "Exploraciones conceptuales de identidad, producto y cultura. Ninguna representa un cliente real.",
+    "items": [
+      {
+        "title": "Forma",
+        "category": "Identidad / Art direction",
+        "description": "Un objeto cotidiano convertido en un lenguaje de marca.",
+        "image": "/images/forma.webp",
+        "imageAlt": "Perfume conceptual verde sobre un pedestal violeta. Imagen generada."
+      },
+      {
+        "title": "Frecuencia",
+        "category": "Cultura / Digital",
+        "description": "Un sistema visual para conectar música, imagen y espacio.",
+        "image": "/images/poster.webp",
+        "imageAlt": "Instalación de carteles escultóricos azules, lima y lila. Imagen generada."
+      },
+      {
+        "title": "Intervalo",
+        "category": "Editorial / Identidad",
+        "description": "Una publicación imaginaria sobre las pequeñas pausas.",
+        "image": "/images/book.webp",
+        "imageAlt": "Libro conceptual lila con páginas naranjas y una esfera translúcida. Imagen generada."
+      }
+    ]
+  },
+  "services": {
+    "title": "Una idea. Muchas formas de llevarla más lejos.",
+    "items": [
+      {
+        "title": "Estrategia & identidad",
+        "description": "Encontrar qué te hace distinto. Darle una voz y una forma propia."
+      },
+      {
+        "title": "Experiencias digitales",
+        "description": "Diseñar recorridos que se entienden, se sienten y se usan."
+      },
+      {
+        "title": "Dirección de arte & movimiento",
+        "description": "Hacer visible una idea con imágenes, piezas y ritmo."
+      }
+    ]
+  },
+  "story": {
+    "title": "Nos gusta mirar desde otro lugar.",
+    "description": "Somos una agencia creativa ficticia para quienes quieren construir una marca con punto de vista. Conectamos estrategia, diseño y tecnología para convertir una intención en una experiencia.",
+    "note": "Un equipo pequeño. Una conversación directa."
+  },
+  "scene": {
+    "title": "Una marca puede tomar muchas formas.",
+    "description": "Explora el lenguaje de Órbita.",
+    "mode": "sculpture",
+    "label": "Exploración orbital interactiva",
+    "fallback": "/images/sculpture.svg",
+    "controls": [
+      {
+        "label": "Órbita",
+        "value": "knot"
+      },
+      {
+        "label": "Onda",
+        "value": "wave"
+      },
+      {
+        "label": "Núcleo",
+        "value": "core"
+      }
+    ]
+  },
+  "sections": [
+    "inicio",
+    "manifiesto",
+    "trabajo",
+    "laboratorio",
+    "servicios",
+    "notas",
+    "contacto"
+  ]
+}

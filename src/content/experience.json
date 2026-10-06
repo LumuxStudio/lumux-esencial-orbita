@@ -1,0 +1,45 @@
+{
+  "kind": "agency",
+  "manifesto": {
+    "title": "Una buena idea no se queda quieta.",
+    "description": "La probamos, la torcemos, la hacemos salir de la pantalla. Estrategia que encuentra una voz. Diseño que ocupa su propio espacio.",
+    "note": "Pensar / Dar forma / Poner en movimiento"
+  },
+  "journey": {
+    "title": "Nada tiene una sola forma.",
+    "description": "Una idea puede ser un núcleo, una onda o una constelación. Desplázate para transformarla.",
+    "mode": "particles",
+    "fallback": "/images/constellation.svg",
+    "label": "Materia en movimiento · Laboratorio Órbita",
+    "phases": [
+      "01 — Concentrar",
+      "02 — Expandir",
+      "03 — Conectar"
+    ],
+    "controls": [
+      {
+        "label": "Recorrido",
+        "value": "scroll"
+      },
+      {
+        "label": "Núcleo",
+        "value": "core"
+      },
+      {
+        "label": "Onda",
+        "value": "wave"
+      },
+      {
+        "label": "Constelación",
+        "value": "orbit"
+      }
+    ]
+  },
+  "notes": {
+    "title": "De la pantalla al mundo.",
+    "description": "Pensamos en marcas que pueden convertirse en una publicación, un objeto o una experiencia. El soporte cambia; el punto de vista permanece.",
+    "image": "/images/book.webp",
+    "imageAlt": "Publicación de arte conceptual con papel lila, páginas naranjas y esfera acrílica. Imagen generada.",
+    "note": "Apunte de estudio / El objeto también comunica"
+  }
+}

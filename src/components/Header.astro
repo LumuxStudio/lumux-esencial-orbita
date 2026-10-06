@@ -1,0 +1,4 @@
+---
+import {site as s} from '../lib/content';
+---
+<header class="site-header"><a class="wordmark" href="#inicio" aria-label={s.brand.name}><span class="brand-mark" aria-hidden="true"></span>{s.brand.name}</a><span class="header-descriptor">{s.brand.descriptor}</span><nav aria-label={s.ui.navigation}>{s.nav.map(n=><a href={n.href}>{n.label}</a>)}</nav><details class="mobile-menu"><summary>{s.ui.menu}<span aria-hidden="true"> +</span></summary><nav aria-label={s.ui.navigation}>{s.nav.map(n=><a href={n.href}>{n.label}</a>)}</nav></details></header>

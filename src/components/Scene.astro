@@ -1,0 +1,17 @@
+---
+import {site as s} from '../lib/content';
+interface Config {mode:string;fallback:string;label:string;description:string;controls:{label:string;value:string}[];phases?:string[]}
+interface Props {kind?:'hero'|'laboratory';config:Config}
+const {kind='hero',config:g}=Astro.props;
+---
+<div class={`scene scene-${kind}`} data-scene={g.mode} data-phases={JSON.stringify(g.phases??[])}>
+  <div class="scene-viewport" role="img" aria-label={g.label}><img src={g.fallback} width="1200" height="900" alt=""/><div class="scene-canvas" aria-hidden="true"></div></div>
+  <div class="scene-controls" role="group" aria-label={g.description}>{g.controls.map((b,i)=><button type="button" data-scene-mode={b.value} aria-pressed={i===0?'true':'false'} disabled>{b.label}</button>)}<button class="scene-pause" type="button" data-pause={s.ui.pause} data-resume={s.ui.resume} aria-pressed="false" disabled>{s.ui.pause}</button></div>
+  <p class="scene-status" role="status" data-fallback={s.ui.sceneFallback}></p>
+</div>
+<script>
+for(const host of document.querySelectorAll<HTMLElement>('[data-scene]')){
+  if(host.dataset.observed)continue;host.dataset.observed='true';
+  const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)&&!host.dataset.mounted){host.dataset.mounted='true';import('../scripts/scene').then(m=>m.mountScene(host)).catch(()=>{const status=host.querySelector<HTMLElement>('.scene-status');if(status)status.textContent=status.dataset.fallback!;});observer.disconnect();}},{rootMargin:'180px'});observer.observe(host);
+}
+</script>

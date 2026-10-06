@@ -1,0 +1,11 @@
+---
+import '@fontsource-variable/manrope';
+import '@fontsource-variable/syne';
+import '@fontsource-variable/fraunces';
+import '../../tokens.css';
+import '../styles/base.css';
+import '../styles/site.css';
+import {site as s,theme} from '../lib/content';
+const style=Object.entries(theme).filter(([k])=>!['display','body'].includes(k)).map(([k,v])=>`--color-${k.replace(/[A-Z]/g,m=>'-'+m.toLowerCase())}:${v}`).join(';')+`;--font-display:'${theme.display}',sans-serif;--font-body:'${theme.body}',sans-serif`;
+---
+<!doctype html><html lang="es"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="description" content={s.seo.description}/><meta name="robots" content="noindex,nofollow"/><meta property="og:title" content={s.seo.title}/><meta property="og:description" content={s.seo.description}/><meta property="og:image" content={s.hero.image}/><title>{s.seo.title}</title><link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32"/><link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16"/><link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any"/><link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180"/><meta name="theme-color" content="#29223d"/></head><body data-kind={s.kind} style={style}><a class="skip" href="#contenido">{s.ui.skip}</a><slot/></body></html>

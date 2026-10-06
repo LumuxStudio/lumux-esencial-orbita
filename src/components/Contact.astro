@@ -1,0 +1,16 @@
+---
+import {site as s} from '../lib/content';
+---
+<section class="contact brief-section" id="contacto">
+  <div class="brief-heading"><p class="eyebrow">Tu siguiente idea empieza aquí</p><h2 data-reveal>{s.contact.title}</h2><div class="brief-intro"><p>{s.contact.description}</p><a class="line-link" href={s.contact.email.href} data-track="email">{s.contact.email.label}<span aria-hidden="true">↗</span></a></div></div>
+  <form class="contact-form brief-form" novalidate data-valid={s.ui.valid} data-error={s.ui.error} data-loading={s.ui.loading} data-required={s.ui.required} data-email-error={s.ui.emailError} data-minimum={s.ui.minimum}>
+    <div class="brief-field"><label for="name"><span>01</span>{s.ui.name} *</label><input id="name" name="name" required maxlength="120" autocomplete="name" aria-describedby="name-error"/><span class="field-error" id="name-error"></span></div>
+    <div class="brief-field"><label for="email"><span>02</span>{s.ui.email} *</label><input id="email" name="email" type="email" required maxlength="254" autocomplete="email" aria-describedby="email-error"/><span class="field-error" id="email-error"></span></div>
+    <div class="brief-field brief-select"><label for="interest"><span>03</span>¿Hacia dónde vamos? <small>Opcional</small></label><select name="interest" id="interest"><option value="">Elige un punto de partida</option><option value="identidad">Estrategia e identidad</option><option value="digital">Experiencia digital</option><option value="movimiento">Dirección de arte y movimiento</option><option value="explorar">Todavía quiero explorar</option></select></div>
+    <div class="brief-field brief-message"><label for="message"><span>04</span>{s.ui.message} *</label><textarea id="message" name="message" required minlength="10" maxlength="1500" rows="3" aria-describedby="message-error"></textarea><span class="field-error" id="message-error"></span></div>
+    <div class="brief-action"><p class="form-note">{s.ui.formNote}</p><button class="button" type="submit" disabled>{s.ui.submit}<span aria-hidden="true">↗</span></button></div><p role="status" class="form-status" aria-live="polite"></p><noscript><p>{s.ui.noJs}</p></noscript>
+  </form>
+  <svg class="brief-asterisk" viewBox="0 0 160 160" aria-hidden="true"><path d="M80 8v144M8 80h144M29 29l102 102M29 131 131 29"/></svg>
+</section>
+<footer class="site-footer"><p class="footer-mark">{s.brand.name}<span aria-hidden="true">✳</span></p><div><p>{s.ui.demo}</p><p>{s.ui.footer}</p></div><button class="motion-control" type="button" data-pause={s.ui.pause} data-resume={s.ui.resume} aria-pressed="false" disabled>{s.ui.pause}</button><p>{s.ui.copyright}</p></footer>
+<script>import '../scripts/interactions';</script>

@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+import Scene from '../components/Scene.astro';
+import {site as s} from '../lib/content';
+import {experience as e} from '../lib/experience';
+---
+<Layout>
+  <Header/>
+  <main id="contenido">
+    <section class="hero orbital-hero" id="inicio" data-journey>
+      <Scene kind="hero" config={s.scene!}/>
+      <div class="hero-copy">
+        <p class="eyebrow hero-eyebrow">{s.hero.caption}</p>
+        <h1><span data-intro>{s.hero.lines[0]}</span><span data-intro>{s.hero.lines[1]}</span></h1>
+        <div class="hero-detail"><p>{s.hero.description}</p><a class="line-link" href={s.hero.cta.href}>{s.hero.cta.label}<span aria-hidden="true">↘</span></a></div>
+      </div>
+      <div class="hero-bottom"><p>Órbita / Estudio creativo</p><p class="hero-scroll">Desliza para salir de lo esperado <span aria-hidden="true">↓</span></p></div>
+    </section>
+
+    {s.sections.includes('manifiesto')&&<section class="manifesto" id="manifiesto">
+      <div class="manifesto-orbit" aria-hidden="true">
+        <svg viewBox="0 0 1000 560" class="manifesto-svg"><defs><path id="manifesto-loop" d="M 125,280 a 375,190 0 1,1 750,0 a 375,190 0 1,1 -750,0"/></defs><ellipse cx="500" cy="280" rx="450" ry="95" transform="rotate(-24 500 280)" data-draw/><ellipse cx="500" cy="280" rx="370" ry="210" transform="rotate(28 500 280)" data-draw/><text class="orbit-type"><textPath href="#manifesto-loop" startOffset="6%" data-orbit-text>PENSAR · DAR FORMA · PONER EN MOVIMIENTO · </textPath></text><circle class="orbit-dot" cx="820" cy="142" r="14"/></svg>
+      </div>
+      <div class="manifesto-copy"><p class="eyebrow">Nuestro punto de vista</p><h2 data-reveal>{e.manifesto.title}</h2><p>{e.manifesto.description}</p><span class="small-note">{e.manifesto.note}</span></div>
+    </section>}
+
+    {s.sections.includes('trabajo')&&<section class="work poster-wall" id="trabajo">
+      <div class="work-heading"><p class="eyebrow">Selección conceptual / 01—03</p><h2 data-reveal>{s.projects!.title}</h2><p>{s.projects!.description}</p></div>
+      <div class="poster-grid">{s.projects!.items.map((p,i)=><article class={`poster poster-${i+1}`} data-poster data-poster-index={i}>
+        <figure class="poster-image"><img src={p.image} srcset={`${p.image.replace('.webp','-768.webp')} 768w, ${p.image} 1600w`} sizes="(min-width:768px) 55vw, 92vw" width="1600" height="1200" alt={p.imageAlt} loading="lazy"/></figure>
+        <div class="poster-label"><span class="poster-number">0{i+1}</span><div><h3>{p.title}</h3><p>{p.category}</p></div><span aria-hidden="true">↗</span></div>
+        <p class="poster-description">{p.description}</p>
+      </article>)}</div>
+      <svg class="work-scribble" viewBox="0 0 160 160" aria-hidden="true"><path d="M80 10v140M10 80h140M29 29l102 102M29 131 131 29" data-draw/></svg>
+    </section>}
+
+    {s.sections.includes('laboratorio')&&<section class="laboratory" id="laboratorio" data-journey>
+      <div class="lab-sticky">
+        <Scene kind="laboratory" config={e.journey}/>
+        <div class="lab-copy"><p class="eyebrow">Laboratorio / Materia digital</p><h2>{e.journey.title}</h2><p>{e.journey.description}</p></div>
+        <div class="lab-phase"><span class="phase-label" data-phase>01 — Concentrar</span><div class="phase-meter" aria-hidden="true"><span></span></div></div>
+        <div class="lab-instructions"><span aria-hidden="true">↓</span><p>Una idea, tres estados.<br/>El movimiento conecta todo.</p></div>
+      </div>
+    </section>}
+
+    {s.sections.includes('servicios')&&<section class="capabilities section" id="servicios">
+      <div class="capability-heading"><p class="eyebrow">Cómo damos forma</p><h2 data-reveal>{s.services!.title}</h2></div>
+      <div class="capability-network">
+        <div class="network-drawing" aria-hidden="true"><svg viewBox="0 0 600 500"><path class="network-path" d="M300 245Q120 80 90 120M300 245Q510 70 500 110M300 245Q470 430 495 400" data-draw/><ellipse cx="300" cy="245" rx="215" ry="132" transform="rotate(-28 300 245)" data-draw/><ellipse cx="300" cy="245" rx="105" ry="210" transform="rotate(-28 300 245)" data-draw/><circle class="network-core" cx="300" cy="245" r="53"/><g class="network-node" data-network-node="0"><circle cx="90" cy="120" r="20"/><circle cx="90" cy="120" r="34"/></g><g class="network-node" data-network-node="1"><circle cx="500" cy="110" r="20"/><circle cx="500" cy="110" r="34"/></g><g class="network-node" data-network-node="2"><circle cx="495" cy="400" r="20"/><circle cx="495" cy="400" r="34"/></g><text x="300" y="254" text-anchor="middle">órbita</text></svg></div>
+        <div class="capability-controls" role="group" aria-label="Áreas de trabajo">{s.services!.items.map((p,i)=><button type="button" class="capability-button" data-service={i} aria-pressed={i===0?'true':'false'} aria-controls={`service-panel-${i}`}><span>0{i+1}</span>{p.title}<span aria-hidden="true">↗</span></button>)}</div>
+        <div class="capability-panels">{s.services!.items.map((p,i)=><article id={`service-panel-${i}`} class="capability-panel" data-service-panel={i} hidden={i!==0}><span class="small-note">El punto de partida / 0{i+1}</span><h3>{p.title}</h3><p>{p.description}</p><a class="line-link" href="#contacto">Abrir la conversación <span aria-hidden="true">↗</span></a></article>)}</div>
+        <noscript><style is:inline>.capability-panels [hidden]{display:block!important}.capability-controls{display:none}.capability-panels{display:grid;gap:2rem}</style></noscript>
+      </div>
+    </section>}
+
+    {s.sections.includes('notas')&&<section class="notes" id="notas">
+      <div class="notes-copy"><p class="eyebrow">Fuera de la pantalla</p><h2 data-reveal>{e.notes.title}</h2><p>{e.notes.description}</p><span class="small-note">{e.notes.note}</span><svg class="notes-arrow" viewBox="0 0 160 120" aria-hidden="true"><path d="M8 20c5 95 83 96 126 53M90 73h45v42" data-draw/></svg></div>
+      <figure class="notes-photo" data-parallax><img src={e.notes.image} srcset="/images/book-768.webp 768w, /images/book.webp 1600w" sizes="(min-width:768px) 60vw, 100vw" alt={e.notes.imageAlt} width="1600" height="1200" loading="lazy"/></figure>
+      <p class="notes-caption">Publicación / Objeto / Lenguaje</p>
+    </section>}
+    <Contact/>
+  </main>
+  <script>import '../scripts/motion';</script>
+</Layout>

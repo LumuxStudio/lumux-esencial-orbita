@@ -1,0 +1,30 @@
+{
+  "name": "agencia-orbita",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1 --port 4333",
+    "build": "npm run validate && astro check && astro build",
+    "preview": "astro preview --host 127.0.0.1 --port 4333",
+    "validate": "node --import tsx scripts/validate.ts",
+    "test": "node --import tsx --test scripts/schema.test.ts"
+  },
+  "dependencies": {
+    "@fontsource-variable/fraunces": "^5.2.0",
+    "@fontsource-variable/manrope": "^5.2.0",
+    "@fontsource-variable/syne": "^5.2.0",
+    "astro": "^7.3.5",
+    "gsap": "^3.13.0",
+    "lenis": "^1.3.26",
+    "three": "^0.180.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@types/node": "^22.20.5",
+    "@types/three": "^0.180.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}
